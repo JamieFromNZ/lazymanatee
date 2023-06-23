@@ -3,14 +3,7 @@ const path = require('path');
 const app = express();
 
 const initFirebase = require('./initFirebase');
-//let firebase = initFirebase();
-
-// Set 'views' directory for any views 
-// being rendered res.render()
-app.set('views', path.join(__dirname, 'views'));
-
-// Set template html thingy to EJS
-app.set('view engine', 'ejs');
+let firebase = initFirebase();
 
 // Public folder contains js, css, images
 app.use(express.static(path.join(__dirname, 'public')));
